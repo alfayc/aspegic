@@ -1912,6 +1912,7 @@ form label {
 #ubea-hero .btn.btn-primary {
   padding: 14px 30px !important;
 }
+
 #ubea-hero .flexslider {
   border: none;
   z-index: 1;
@@ -1921,6 +1922,7 @@ form label {
   position: relative;
   overflow: hidden;
 }
+
 #ubea-hero .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
@@ -1936,10 +1938,12 @@ form label {
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
 }
+
 #ubea-hero .flexslider .flex-control-nav {
   bottom: 40px;
   z-index: 1000;
 }
+
 #ubea-hero .flexslider .flex-control-nav li a {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: none;
@@ -1969,6 +1973,7 @@ form label {
   position: relative;
   z-index: 10;
 }
+
 #ubea-hero .flexslider .flex-direction-nav a.flex-prev {
   opacity: 1 !important;
   left: 40px !important;
@@ -2026,6 +2031,7 @@ form label {
     font-size: 40px;
   }
 }
+
 #ubea-hero .flexslider .slider-text > .slider-text-inner .ubea-lead {
   font-size: 20px;
   color: #fff;
@@ -2048,3 +2054,69 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+/* ajouts Vrd */
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+#ubea-hero .flexslider .slides li .overlaypqvendre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
