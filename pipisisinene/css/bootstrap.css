@@ -292,8 +292,9 @@ th {
   }
 
   .label {
-    border: 1px solid #000;
-  }
+display: block;
+  width: 150px;
+  float: left;  }
 
   .table {
     border-collapse: collapse !important;
