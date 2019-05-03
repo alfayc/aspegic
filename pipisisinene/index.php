@@ -98,10 +98,10 @@
 								<li><a href="#">Sports et Loisir</a></li>
 							</ul>
 						</li>
-						<li><a href="vendre1.html">Vendre</a></li>
-                        <li><a href="AchatConnection.html">Votre compte</a></li>
+						<li><a href="vendre1.php">Vendre</a></li>
+                        <li><a href="AchatConnection.php">Votre compte</a></li>
 						<li><a href="#">Panier</a></li>
-						<li><a href="form_admin.html">Admin</a></li>
+						<li><a href="form_admin.php">Admin</a></li>
 					</ul>
 				</div>
 			</div>

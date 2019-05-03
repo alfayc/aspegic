@@ -64,7 +64,7 @@
 
 					<!-- LOGO en haut à gauche --> 
 
-					<a href="index.html" title="accueil">
+					<a href="index.php" title="accueil">
 							<img
 							src="images/logo.png" 
 							alt="[logo ECE]"
@@ -84,7 +84,7 @@
 								<li><a href="#">Vêtements</a></li>
 								<li><a href="#">Sports et Loisir</a></li>
 							</ul>
-						<li><a href="vendre1.html" target="_blank">Vendre</a></li>
+						<li><a href="vendre1.php" target="_blank">Vendre</a></li>
                         <li><a href="#">Votre compte</a></li>
 						<li><a href="#">Panier</a></li>
 						<li><a href="#">Admin</a></li>
@@ -109,8 +109,8 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>E-CommercE Vendeur</h2>
-		   					<p><a href="vendreInscription.html" target="_blank" class="btn btn-primary btn-lg">S'inscrire</a></p>
-		   					<p><a href="vendreConnection.html" target="_blank" class="btn btn-primary btn-lg">Se connecter</a></p>
+		   					<p><a href="vendreInscription.php" target="_blank" class="btn btn-primary btn-lg">S'inscrire</a></p>
+		   					<p><a href="vendreConnection.php" target="_blank" class="btn btn-primary btn-lg">Se connecter</a></p>
 		   				</div>
 		   			</div>
 		   		</div>

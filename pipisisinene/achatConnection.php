@@ -64,7 +64,7 @@
 
 					<!-- LOGO en haut à gauche --> 
 
-					<a href="index.html" title="accueil">
+					<a href="index.php" title="accueil">
 							<img
 							src="images/logo.png" 
 							alt="[logo ECE]"
@@ -84,7 +84,7 @@
 								<li><a href="#">Vêtements</a></li>
 								<li><a href="#">Sports et Loisir</a></li>
 							</ul>
-						<li><a href="vendre1.html" target="_blank">Vendre</a></li>
+						<li><a href="vendre1.php" target="_blank">Vendre</a></li>
                         <li><a href="#">Votre compte</a></li>
 						<li><a href="#">Panier</a></li>
 						<li><a href="#">Admin</a></li>
@@ -130,7 +130,7 @@
 		   					
 		   					<br><br><br>
 
-		   					<p class="inscri"><a href="form_nvx_acheteur.html">S'inscrire</a></p>
+		   					<p class="inscri"><a href="form_nvx_acheteur.php">S'inscrire</a></p>
 		   					
 
 		   				</div>
