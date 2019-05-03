@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>NOUVEAU PRODUIT</h1>
+
+	<form method="post" action="traitement_nvx_produit.php">
+		<label for="nom">Le nom :</label>
+		<input type="text" name="nom"/>
+		<br><br>
+		<label for="description">Description :</label>
+		<textarea name="description"></textarea>
+		<br><br>
+		<label for="photo">Le nom de la photo :</label>
+		<input type="text" name="photo"/>
+		<br><br>
+		<label for="video">Le nom de la video :</label>
+		<input type="text" name="video"/>
+		<br><br>
+		<label for="prix">Le prix :</label>
+		<input type="float" name="prix"/>
+		<br><br>
+		<label for="categorie">La categorie :</label>
+		<select name="categorie">
+			<option value="livres">Livres</option>
+			<option value="musiques">Musiques</option>
+			<option value="vetements">Vetements</option>
+			<option value="sports&loisir">Sports & Loisir</option>
+		</select>
+		<br><br>
+		<label for="quantite">La quantite :</label>
+		<input type="number" name="quantite"/>
+		<br><br>
+		<label for="ID_Vendeur">Votre ID :</label>
+		<input type="number" name="ID_Vendeur"/>
+		<br><br>
+		<input type="submit" name="envoyer"/>
+	</form>
+</body>
+</html>

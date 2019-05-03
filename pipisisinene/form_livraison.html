@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>LIVRAISON</h1>
+
+	<form method="post" action="traitement_livraison.php">
+		<label for="nom_livraison">Nom :</label>
+		<input type="text" name="nom_livraison">
+		<br><br>
+		<label for="prenom_livraison">Prenom :</label>
+		<input type="text" name="prenom_livraison"/>
+		<br><br>
+		<label for="adresse_postale">Adresse postale :</label>
+		<textarea name="adresse_postale"></textarea>
+		<br><br>
+		<label for="ville">Ville :</label>
+		<input type="text" name="ville"/>
+		<br><br>
+		<label for="code_postal">Code postal :</label>
+		<input type="number" name="code_postal"/>
+		<br><br>
+		<label for="pays">Pays :</label>
+		<input type="text" name="pays"/>
+		<br><br>
+		<label for="numero_tel">Numero de telephone :</label>
+		<input type="number" name="numero_tel"/>
+		<br><br>
+		<label for="type_paiement">Type de paiement :</label>
+		<select name="type_paiement">
+			<option value="visa">Visa</option>
+			<option value="mastercard">MasterCard</option>
+			<option value="american_express">American Express</option>
+			<option value="paypal">PayPal</option>
+		</select>
+		<br><br>
+		<label for="numero_carte">Numero de carte :</label>
+		<input type="number" name="numero_carte"/>
+		<br><br>
+		<label for="nom_carte">Nom indique sur la carte :</label>
+		<input type="text" name="nom_carte"/>
+		<br><br>
+		<label for="date_exp">Date d'expiration :</label>
+		<input type="number" name="date_exp"/>
+		<br><br>
+		<label for="cryptogramme">Cryptogramme :</label>
+		<input type="number" name="cryptogramme"/>
+		<br><br>
+		<input type="submit" name="envoyer"/>
+	</form>
+</body>
+</html>
