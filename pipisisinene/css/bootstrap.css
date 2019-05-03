@@ -3432,6 +3432,49 @@ tbody.collapse.in {
 .nav:after {
   clear: both;
 }
+
+.nav > ul
+{
+  margin: 100px;
+  padding: 0px;
+}
+
+.nav > ul > li
+{
+  float: left;
+  position: relative;
+}
+
+.submenu
+{
+  display: none;
+}
+
+nav > ul::after
+{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.categories:hover .submenu
+{
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 350px;
+  padding: 0px;
+  z-index: 100000;
+}
+
+.submenu li a
+{
+  padding: 15px 30px;
+  font-size: 13px;
+  color: black;
+  width: 270px;
+}
+
 .nav > li {
   position: relative;
   display: block;
