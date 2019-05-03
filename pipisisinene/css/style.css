@@ -2153,3 +2153,26 @@ border-radius: 7px;
 margin-bottom: 7px;
 
 }
+
+#conteneur
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.element{
+  margin: auto;
+  width: 230px;
+  height: 800px;
+}
+
+#menu
+{
+  text-align: right;
+}
+
+.inscri
+{
+  text-align: center;
+  text-decoration: underline;
+}

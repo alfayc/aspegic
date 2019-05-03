@@ -3463,7 +3463,7 @@ nav > ul::after
   display: inline-block;
   position: absolute;
   top: 100%;
-  left: 350px;
+  left: 570px;
   padding: 0px;
   z-index: 100000;
 }

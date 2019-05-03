@@ -13,7 +13,7 @@
 		$photo=isset($_POST['photo'])?$_POST['photo'] : "";
 		$wallpaper=isset($_POST['wallpaper'])?$_POST['wallpaper'] : "";
 
-		$sql="INSERT INTO vendeur VALUES ('$mail', '$password', '$nom', '$prenom', '$photo', '$wallpaper')";
+		$sql="INSERT INTO vendeur (mail, password, nom, prenom, photo, wallpaper) VALUES ('$mail', '$password', '$nom', '$prenom', '$photo', '$wallpaper')";
 
 		if(mysqli_query($db_handle, $sql))
 		{
