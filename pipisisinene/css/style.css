@@ -2188,3 +2188,34 @@ margin-bottom: 7px;
   background-color: #FE5126;
   color: white;
 }
+
+.listenavendeur{
+   border-radius: 7px;
+  background-color: #87CEEB;
+  color: white;
+}
+.listenavadmin{
+   border-radius: 7px;
+  background-color: #708090;
+  color: white;
+}
+
+.cate{
+  border-radius: 7px;
+  height: 30px;
+
+
+margin-bottom: 7px;
+
+}
+
+div.nvx_prod_form {
+  padding: 10px;
+  width: 500px;
+  height: 400px;
+  margin: 10px;
+  margin-left: 200px;
+  border: 5px solid darkgrey;
+  border-radius: 20px;
+  background-color: #FFD5AF;
+}
