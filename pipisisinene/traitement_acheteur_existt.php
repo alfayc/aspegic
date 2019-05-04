@@ -15,12 +15,17 @@
 
 			if($data['password'] == $password)
 			{
-				echo "ok";
+				$sql = "SELECT nom FROM acheteur WHERE mail = '$mail'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				session_start();
+				$_SESSION['nom']=$data['nom'];
+				header("Location: index.php");
 			}
 
 			else
 			{
-				echo "non";
+				
 			}
 		}
 
