@@ -8,13 +8,12 @@
 		{
 			$mail = isset($_POST['mail'])?$_POST['mail'] : "";
 			$password = isset($_POST['password'])?$_POST['password'] : "";
-
-			$connexion = false;
 		
 			$sql = "SELECT password FROM acheteur WHERE mail = '$mail'";
 			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
 
-			if($result == $password)
+			if($data['password'] == $password)
 			{
 				echo "ok";
 			}
