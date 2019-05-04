@@ -1,3 +1,9 @@
+<?php
+
+	session_start();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -186,6 +192,16 @@
 									<div class="feature-copy">
 										<h3>Visibilité</h3>
 										<p>En vendant sur E-CommercE, votre entreprise fera parler d'elle. Vos produits seront beaucoup plus accessibles et auront d'autant plus de visibilité. Inscrivez vous dès maintenant pour faire connaitre votre commerce.</p>
+										
+										<?php
+
+										if(isset($_SESSION['nom']) && !empty($_SESSION['nom']))
+										{
+											echo $_SESSION['nom'];
+										}
+
+										?>
+										
 									</div>
 								</div>
 							</div>
