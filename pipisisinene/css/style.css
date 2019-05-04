@@ -2176,3 +2176,15 @@ margin-bottom: 7px;
   text-align: center;
   text-decoration: underline;
 }
+
+.fondblanc {
+  background-color: white;
+  border-radius: 7px;
+  border: solid;
+}
+
+.listenav{
+   border-radius: 7px;
+  background-color: #FE5126;
+  color: white;
+}
