@@ -11,19 +11,17 @@
 
 			$connexion = false;
 
-			$logs=array(
-				"marieploteau22@gmail.com"=>"piscine19";
-				"faycal.khalaf@edu.ece.fr"=>"piscine19";
-				"thomas.virondaud@gmail.com"=>"piscine19";
-			);
+			$logs=array("marieploteau22@gmail.com"=>"piscine19", "faycal.khalaf@edu.ece.fr"=>"piscine19", "thomas.virondaud@gmail.com"=>"piscine19");
 		
-			for ($i = 0; $i < count($logs); $i++) 
-			{
  				if ($logs[$mail] == $password) 
  				{
- 					$connexion = true;
+ 					echo "ok";
  				}
- 			}
+
+ 				else
+ 				{
+ 					echo "non";
+ 				}
 
 		}
 

@@ -11,7 +11,7 @@
 		$mail=isset($_POST['mail'])?$_POST['mail'] : "";
 		$password=isset($_POST['password'])?$_POST['password'] : "";
 
-		$sql="INSERT INTO acheteur VALUES ('$mail', '$password', '$nom', '$prenom')";
+		$sql="INSERT INTO acheteur (mail, password, nom, prenom) VALUES ('$mail', '$password', '$nom', '$prenom')";
 
 		if(mysqli_query($db_handle, $sql))
 		{

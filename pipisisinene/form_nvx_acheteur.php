@@ -111,7 +111,7 @@
 		   					<h2>NOUVEL ACHETEUR</h2> <br> <br>
 		   					<form method="post" action="traitement_nvx_acheteur.php">
 									<label for="nom">Votre nom :</label>
-									<input type="text" name="nom">
+									<input type="text" name="nom"/>
 									<br><br>
 									<label for="prenom">Votre prenom :</label>
 									<input type="text" name="prenom"/>
@@ -123,7 +123,7 @@
 									<input type="password" name="password"/>
 									<br><br>
 									<input class="btn btn-primary btn-lg pull-left" style="margin-left:  400px" type="submit" name="envoyer" value="Envoyer"/>
-								</form>
+							</form>
 		   					
 		   					<br>
 		   					

@@ -16,18 +16,12 @@
 
 			if($result == $password)
 			{
-				$connexion = true;
-			}
-
-
-			if(mysqli_query($db_handle, $sql))
-			{
 				echo "ok";
 			}
 
 			else
 			{
-				echo "pb";
+				echo "non";
 			}
 		}
 
