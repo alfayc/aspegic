@@ -8,28 +8,20 @@
 	{
 		$mail = isset($_POST['mail'])?$_POST['mail'] : "";
 		$password = isset($_POST['password'])?$_POST['password'] : "";
-
-		$connexion = false;
 		
-		$sql = "SELECT password FROM vendeur WHERE mail LIKE $mail";
+		$sql = "SELECT password FROM vendeur WHERE mail = '$mail'";
 		$result = mysqli_query($db_handle, $sql);
+		$data = mysqli_fetch_assoc($result);
 
-		if($result == $password)
-		{
-			$connexion = true;
-			echo "true";
-		}
+			if($data['password'] == $password)
+			{
+				echo "ok";
+			}
 
-
-		if(mysqli_query($db_handle, $sql))
-		{
-			echo "ok";
-		}
-
-		else
-		{
-			echo "pbexistt";
-		}
+			else
+			{
+				echo "non";
+			}
 	}
 
 	else
