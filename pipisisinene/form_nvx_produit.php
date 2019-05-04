@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nouveau Produit</title>
+	<title>Inscription Vendeur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -144,7 +144,6 @@
 
 
 	</nav>
-
 	<div id="ubea-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
@@ -153,45 +152,85 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-						   </br></br></br></br>
-		   					<h2>NOUVEAU PRODUIT</h2> <br>
-
-	<form method="post" action="traitement_nvx_produit.php">
-		<label for="nom">Nom :</label>
-		<input type="text" name="nom"/>
-		<br>
-		<label for="description">Description :</label>
-		<textarea name="description"></textarea>
-		<br>
-		<label for="photo">Nom de la photo :</label>
-		<input type="text" name="photo"/>
-		<br>
-		<label for="video">Nom de la vidéo :</label>
-		<input type="text" name="video"/>
-		<br>
-		<label for="prix">Prix :</label>
-		<input type="float" name="prix"/>
-		<br>
-		<label for="categorie">Catégorie :</label>
-		<select name="categorie">
-			<option value="livres">Livres</option>
-			<option value="musiques">Musique</option>
-			<option value="vetements">Vêtements</option>
-			<option value="sports&loisir">Sports & Loisir</option>
-		</select>
-		<br>
-		<label for="quantite">Quantité :</label>
-		<input type="number" name="quantite"/>
-		<br>
-		<label for="ID_Vendeur">Votre ID Vendeur :</label>
-		<input type="number" name="ID_Vendeur"/>
-		<br><br>
-		<input class="btn btn-primary btn-lg pull-left" style="margin-left:  400px" type="submit" name="envoyer" value="Envoyer"/>
-	</form>
+		   					<div>
+		   						<h2 style="color: black,">Nouveau Produit</h2>
+		   					</div>
 		   					
-		   					<br>
-		   					
+		   					<div class="nvx_prod_form">
+		   					<form method="post" action="traitement.php">
+		   						<table style="color: black">
+		   							<tr>
+		   								<td class="pull-left inscription"><label for="nom">Nom du produit:</label></td>
+										
+										<td style="width: 230px"><input style="width: 230px" type="text" name="mail" placeholder="Nom de votre produit"></td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left ">
+		   									<label for="description">Description :</label>
+		   								</td>
+		   								<td style="width: 230px, height: 140px">
+		   									<input style="width: 230px" type="password" name="password" placeholder="Description"/>
+		   								</td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left">
+		   									<label for="photo">Nom de l'image :</label>
+		   								</td>
+		   								<td style="width: 230px">
+		   									<input style="width: 230px" type="text" name="nom" placeholder="Nom de l'image"/>
+		   								</td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left">
+		   									<label for="video">Vidéo :</label>
+		   								</td>
+		   								<td style="width: 230px">
+		   									<input style="width: 230px" type="text" name="prenom" placeholder="Nom de la vidéo"/>
+		   								</td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left">
+		   									<label for="prix"> Prix unitaire :  </label>
+		   								</td>
+		   								<td style="width: 230px">
+		   									<input style="width: 230px" type="number" name="photo" placeholder="">
+		   								</td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left">
+		   									<label for="categorie">Catégorie :</label>
+		   								</td>
+		   								<td>
+		   									<select name="categorie" style="width: 230px" class="cate">
+											<option value="livres">Livres</option>
+											<option value="musiques">Musique</option>
+											<option value="vetements">Vêtements</option>
+											<option value="sports&loisir">Sports & Loisir</option>
+										</select>
+		   								</td>
+		   							</tr>
+		   							<tr>
+		   								<td class="pull-left">
+		   									<label for="wallpaper">Quantité :</label>
+		   								</td>
 
+		   								<td style="width: 230px">
+		   									<input style="width: 230px" type="number" name="wallpaper" placeholder="">
+		   								</td>
+		   							</tr>
+		   							<table></table>
+		   							
+		   								
+
+		   								
+		   							
+							
+								</table>
+								<br>
+								<input class="btn btn-primary btn-lg pull-left" style="margin-left:  150px" type="submit" name="envoyer" value="Envoyer"/>
+							</form>
+						</div>
+		   					
 		   				</div>
 		   			</div>
 		   		</div>
@@ -246,3 +285,4 @@
 
 	</body>
 </html>
+
