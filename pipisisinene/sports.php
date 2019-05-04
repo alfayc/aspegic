@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Livres</title>
+	<title>Sport & Loisirs</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -121,7 +121,7 @@
 					 	
 					 </div>
 				</div>
-						<br>
+				
 				<div id="menu">
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
@@ -152,7 +152,7 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>LIVRES</h2> <br> <br>
+		   					<h2>SPORT & LOISIRS</h2> <br> <br>
 		   					
 		   					
 							   <?php
@@ -162,7 +162,7 @@
 							   $db_handle = mysqli_connect('localhost', 'root', 'root');
 							   $db_found = mysqli_select_db($db_handle, $database);
 					   
-							   $sql="SELECT * FROM produit WHERE categorie = 'livre'" ;
+							   $sql="SELECT * FROM produit WHERE categorie = 'sport'" ;
 							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error()); 
 							   while ($row=mysqli_fetch_assoc($req)) 
 								{

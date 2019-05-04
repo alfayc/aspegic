@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Livres</title>
+	<title>Catégories</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -42,8 +42,6 @@
 	<link rel="stylesheet" href="css/flexslider.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-	<!-- W3school css -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -121,7 +119,7 @@
 					 	
 					 </div>
 				</div>
-						<br>
+				
 				<div id="menu">
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
@@ -144,56 +142,29 @@
 
 
 	</nav>
+
 	<div id="ubea-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-color: #ffb347">
+		   	<li >
 		   		<div class="overlaypqvendre"></div>
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>LIVRES</h2> <br> <br>
-		   					
-		   					
-							   <?php
-							   
-
-							   $database = "piscine";
-							   $db_handle = mysqli_connect('localhost', 'root', 'root');
-							   $db_found = mysqli_select_db($db_handle, $database);
-					   
-							   $sql="SELECT * FROM produit WHERE categorie = 'livre'" ;
-							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error()); 
-							   while ($row=mysqli_fetch_assoc($req)) 
-								{
-									echo "<strong>",$row[nom],"</strong>";
-									echo "</br>";
-									echo "Produit n° : ",$row[ID_Produit];
-									echo " / ";
-									echo "Vendeur n° : ",$row[ID_Vendeur];
-									echo " / ";
-									echo $row[description];
-									echo " / ";
-									echo $row[photo];
-									echo " / ";
-									echo $row[video];
-									echo " / ";
-									echo $row[prix];
-									echo " / ";
-									echo $row[categorie];
-									echo " / ";
-									echo $row[quantite];
-									echo "</br>";
-									echo "</br>";
-
-								}
-
-
-
-
-							   ?> 
-		   					
-
+		   					<div id="conteneur">
+							   <a href="books.php" title="livres">
+								   <div class="element"><img src="images/livres.jpg"></div>
+								</a>
+								<a href="music.php" title="musique">   
+								<div class="element"><img src="images/notes.jpg"></div>
+								</a>
+								<a href="clothes.php" title="vetements">
+								<div class="element"><img src="images/pull.jpg"></div>
+								</a>
+								<a href="sports.php" title="sport et loisirs">
+								   <div class="element"><img src="images/foot.jpg"></div>
+								</a>
+		   					</div>
 		   				</div>
 		   			</div>
 		   		</div>
