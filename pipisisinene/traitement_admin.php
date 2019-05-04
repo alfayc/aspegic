@@ -15,13 +15,17 @@
 		
  				if ($logs[$mail] == $password) 
  				{
- 					echo "ok";
+					session_start();
+					$_SESSION['nom']=$nom;
+					header("Location: index.php");
  				}
 
- 				else
- 				{
- 					echo "non";
- 				}
+				else
+				{
+					session_start();
+					$_SESSION['co']=false;
+					header("Location: form_admin.php");
+				}
 
 		}
 

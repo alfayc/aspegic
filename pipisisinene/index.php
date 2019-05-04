@@ -116,7 +116,7 @@
 
 					 		?>
 					 			
-					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
+					 		<a class="listenav" href="form_acheteur_existt.php" style="color: white">Mon compte</a>
 					 		
 					 		<?php
 

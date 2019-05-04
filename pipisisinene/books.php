@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Connexion Acheteur</title>
+	<title>Livres</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -58,7 +58,7 @@
 	<div class="ubea-loader"></div>
 	
 	<div id="page">
-	<nav class="ubea-nav" role="navigation">
+<nav class="ubea-nav" role="navigation">
 		<div class="ubea-container">
 			<div class="row">
 				<div id="conteneur">
@@ -144,7 +144,6 @@
 
 
 	</nav>
-
 	<div id="ubea-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
@@ -153,28 +152,29 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>Connexion Acheteur</h2>
-		   					<form method="post" action="traitement_acheteur_existt.php">
-		   							<table>
-		   						
-		   						<td>
-		   							<tr><p>Nom d'utilisateur :</p></tr>
-		   							<tr><input type="text" name="mail"></tr>
-		   						</td>
-
-		   						
-		   						<td>
-		   							<tr><p>Mot de passe :</p></tr>
-		   							<tr><input type="password" name="password"></tr>
-		   							
-		   						</td>
-		   					</table>
-		   					<input class="btn btn-primary btn-lg pull-left" style="margin-left:  400px" type="submit" name="envoyer" value="Envoyer"/>
-		   						</form>
+		   					<h2>LIVRES</h2> <br> <br>
 		   					
-		   					<br><br><br>
+		   					
+							   <?php
+							   
 
-		   					<p class="inscri"><a href="form_nvx_acheteur.php">S'inscrire</a></p>
+							   $database = "piscine";
+							   $db_handle = mysqli_connect('localhost', 'root', '');
+							   $db_found = mysqli_select_db($db_handle, $database);
+							   //$categorie = isset($_POST['categorie'])?$_POST['categorie'] : "";
+					   
+							   $sql="SELECT * FROM produit WHERE categorie = 'livre'" ;
+							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error()); 
+							  // while($data = mysql_fetch_assoc($req)) 
+{
+							  
+					
+}
+
+
+
+
+							   ?> 
 		   					
 
 		   				</div>

@@ -1,4 +1,6 @@
-
+<?php
+	session_start();
+?>
 	<!DOCTYPE HTML>
 	<html>
 		<head>
@@ -43,6 +45,8 @@
 		<link rel="stylesheet" href="css/flexslider.css">
 		<!-- Theme style  -->
 		<link rel="stylesheet" href="css/style.css">
+		<!-- W3school css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
@@ -58,48 +62,91 @@
 		
 		<div id="page">
 		<nav class="ubea-nav" role="navigation">
-			<div class="ubea-container">
-				<div class="row">
-					<div class="col-sm-2 col-xs-12">
-	
-	
-						<!-- LOGO en haut à gauche --> 
-	
-						<a href="index.php" title="accueil">
-								<img
-								src="images/logo.png" 
-								alt="[logo ECE]"
-								width="200px"
-						/>
-						</a>
-						
-					</div>
+		<div class="ubea-container">
+			<div class="row">
+				<div id="conteneur">
+					<div class="col-sm-2 col-xs-12" >
+
+
+					<!-- LOGO en haut à gauche --> 
+
+					<a href="index.php" title="accueil">
+							<img
+							src="images/logo.png" 
+							alt="[logo ECE]"
+							width="200px"
+					/>
+					</a>
 					
-					<div id="menu">
+					</div>
+
+					<div class="wrap">
+						<div class="search">
+							 <input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 <button type="submit" class="searchButton" style="border-radius: 7px">
+								 <i class="fa fa-search"></i>
+							</button>
+						</div>
+					 </div>
+
+					 <div>
+					 		
+					 		<?php
+
+					 		if(isset($_SESSION['nom']) && !empty($_SESSION['nom']))
+					 		{
+					 			echo "Bonjour " . $_SESSION['nom'];
+					 		?>
+
+					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+
+					 		<?php
+
+					 		session_unset();
+					 		session_destroy();
+
+					 		}
+					 		
+
+					 		else
+					 		{
+
+					 		?>
+					 			
+					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
+					 		
+					 		<?php
+
+					 		}
+
+					 		?>
+					 		
+					 	
+					 </div>
+				</div>
+				
+				<div id="menu">
 					<ul>
-						<li class="categories"><a href="Categories.php">Catégories</a>
-							<ul class="submenu">
+						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
+							<ul class="submenu fondblanc">
 								<li><a href="#">Livres</a></li>
 								<li><a href="#">Musiques</a></li>
 								<li><a href="#">Vêtements</a></li>
 								<li><a href="#">Sports et Loisir</a></li>
 							</ul>
 						</li>
-						<li><a href="vendre1.php">Vendre</a></li>
-                        <li><a href="AchatConnection.php">Votre compte</a></li>
-						<li><a href="#">Panier</a></li>
-						<li><a href="form_admin.php">Admin</a></li>
+						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
+						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
-	
-	
-				</div>
-	
-	
-				
-	
 			</div>
-		</nav>
+		
+		</div>
+		
+
+
+	</nav>
 	
 		<div id="ubea-hero" class="js-fullheight"  data-section="home">
 			<div class="flexslider js-fullheight">
@@ -110,6 +157,18 @@
 						   <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 							   <div class="slider-text-inner">
 								   <h2>CONNEXION ACHETEUR</h2> <br> <br>
+								   	<?php
+
+								   		if(isset($_SESSION['co']) && $_SESSION['co']==false)
+								   		{
+								   			?>
+								   			<p>Mauvais mot de passe ou adresse mail, réessayez</p>
+								   			<?php
+								   			$_SESSION['co']=true;
+								   		}
+
+								   ?>
+
 								   <form method="post" action="traitement_acheteur_existt.php">
 										<label for="mail">Votre mail :</label>
 										<input type="text" name="mail">
@@ -120,8 +179,7 @@
 										<input class="btn btn-primary btn-lg pull-left" style="margin-left:  400px" type="submit" name="envoyer" value="Envoyer"/>
 									</form>
 								   
-								   <br>
-								   
+								   <br>								   
 	
 							   </div>
 						   </div>
@@ -130,6 +188,8 @@
 				  </ul>
 			  </div>
 		</div>
+
+
 	
 		<footer id="ubea-footer" role="contentinfo">
 				<div class="ubea-container">

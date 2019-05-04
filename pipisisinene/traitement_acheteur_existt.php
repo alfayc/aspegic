@@ -12,7 +12,7 @@
 			$sql = "SELECT password FROM acheteur WHERE mail = '$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-
+				
 			if($data['password'] == $password)
 			{
 				$sql = "SELECT nom FROM acheteur WHERE mail = '$mail'";
@@ -25,8 +25,11 @@
 
 			else
 			{
-				
+				session_start();
+				$_SESSION['co']=false;
+				header("Location: form_acheteur_existt.php");
 			}
+
 		}
 
 	else
