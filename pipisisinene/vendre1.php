@@ -74,22 +74,21 @@
 					
 				</div>
 				
-				<div class="col-xs-10 text-right menu-1 main-nav">
+				<div id="menu">
 					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Accueil</a></li>
-						<li class="categories"><a href="#">Catégories</a>
+						<li class="categories"><a href="Categories.php">Catégories</a>
 							<ul class="submenu">
 								<li><a href="#">Livres</a></li>
 								<li><a href="#">Musiques</a></li>
 								<li><a href="#">Vêtements</a></li>
 								<li><a href="#">Sports et Loisir</a></li>
 							</ul>
-						<li><a href="vendre1.php" target="_blank">Vendre</a></li>
-                        <li><a href="#">Votre compte</a></li>
+						</li>
+						<li><a href="vendre1.php">Vendre</a></li>
+                        <li><a href="AchatConnection.php">Votre compte</a></li>
 						<li><a href="#">Panier</a></li>
-						<li><a href="#">Admin</a></li>
+						<li><a href="form_admin.php">Admin</a></li>
 					</ul>
-
 				</div>
 
 			</div>

@@ -90,7 +90,7 @@
 				 </div>
 				<div id="menu">
 					<ul>
-						<li class="categories"><a href="#">Catégories</a>
+						<li class="categories"><a href="Categories.php">Catégories</a>
 							<ul class="submenu">
 								<li><a href="#">Livres</a></li>
 								<li><a href="#">Musiques</a></li>
