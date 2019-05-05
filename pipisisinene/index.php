@@ -86,7 +86,7 @@
 					<div class="wrap">
 						<div class="search">
 							<form method="post" action="recherche.php">
-							 	<input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
 							 	<button type="submit" class="searchButton" style="border-radius: 7px">
 								 	<i class="fa fa-search"></i>
 								</button>
@@ -118,7 +118,7 @@
 
 					 		?>
 					 			
-					 		<a class="listenav" href="form_acheteur_existt.php" style="color: white">Mon compte</a>
+					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
 					 		
 					 		<?php
 

@@ -27,7 +27,7 @@
 			{
 				session_start();
 				$_SESSION['co']=false;
-				header("Location: form_acheteur_existt.php");
+				header("Location: AchatConnection.php");
 			}
 
 		}

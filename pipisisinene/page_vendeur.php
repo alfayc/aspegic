@@ -1,9 +1,15 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Inscription Vendeur</title>
+	<title>Sport & Loisirs</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -79,12 +85,10 @@
 
 					<div class="wrap">
 						<div class="search">
-							 <form method="post" action="recherche.php">
-							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
-							 	<button type="submit" class="searchButton" style="border-radius: 7px">
-								 	<i class="fa fa-search"></i>
-								</button>
-							</form>
+							 <input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 <button type="submit" class="searchButton" style="border-radius: 7px">
+								 <i class="fa fa-search"></i>
+							</button>
 						</div>
 					 </div>
 
@@ -128,7 +132,7 @@
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
 							<ul class="submenu fondblanc">
-								<li><a href="books.php">Livres</a></li>
+							<li><a href="books.php">Livres</a></li>
 								<li><a href="music.php">Musiques</a></li>
 								<li><a href="clothes.php">Vêtements</a></li>
 								<li><a href="sports.php">Sports et Loisir</a></li>
@@ -154,85 +158,64 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<div>
-		   						<h2 style="color: black,">Nouveau Produit</h2>
-		   					</div>
+		   					<h2>RECHERCHE</h2> <br> <br>
 		   					
-		   					<div class="nvx_prod_form">
-		   					<form method="post" action="traitement.php">
-		   						<table style="color: black">
-		   							<tr>
-		   								<td class="pull-left inscription"><label for="nom">Nom du produit:</label></td>
-										
-										<td style="width: 230px"><input style="width: 230px" type="text" name="mail" placeholder="Nom de votre produit"></td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left ">
-		   									<label for="description">Description :</label>
-		   								</td>
-		   								<td style="width: 230px, height: 140px">
-		   									<input style="width: 230px" type="password" name="password" placeholder="Description"/>
-		   								</td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left">
-		   									<label for="photo">Nom de l'image :</label>
-		   								</td>
-		   								<td style="width: 230px">
-		   									<input style="width: 230px" type="text" name="nom" placeholder="Nom de l'image"/>
-		   								</td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left">
-		   									<label for="video">Vidéo :</label>
-		   								</td>
-		   								<td style="width: 230px">
-		   									<input style="width: 230px" type="text" name="prenom" placeholder="Nom de la vidéo"/>
-		   								</td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left">
-		   									<label for="prix"> Prix unitaire :  </label>
-		   								</td>
-		   								<td style="width: 230px">
-		   									<input style="width: 230px" type="number" name="photo" placeholder="">
-		   								</td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left">
-		   									<label for="categorie">Catégorie :</label>
-		   								</td>
-		   								<td>
-		   									<select name="categorie" style="width: 230px" class="cate">
-											<option value="livres">Livres</option>
-											<option value="musiques">Musique</option>
-											<option value="vetements">Vêtements</option>
-											<option value="sports&loisir">Sports & Loisir</option>
-										</select>
-		   								</td>
-		   							</tr>
-		   							<tr>
-		   								<td class="pull-left">
-		   									<label for="wallpaper">Quantité :</label>
-		   								</td>
-
-		   								<td style="width: 230px">
-		   									<input style="width: 230px" type="number" name="wallpaper" placeholder="">
-		   								</td>
-		   							</tr>
-		   							<table></table>
-		   							
-		   								
-
-		   								
-		   							
-							
-								</table>
-								<br>
-								<input class="btn btn-primary btn-lg pull-left" style="margin-left:  150px" type="submit" name="envoyer" value="Envoyer"/>
-							</form>
-						</div>
 		   					
+							   <?php
+							   
+
+							   $database = "piscine";
+							   $db_handle = mysqli_connect('localhost', 'root', '');
+							   $db_found = mysqli_select_db($db_handle, $database);
+					   
+							   $mot = isset($_POST['mot'])?$_POST['mot'] : "";
+
+								$sql = "SELECT * FROM produit WHERE ID_Vendeur = $_SESSION['idvendeur']";
+								$result = mysqli_query($db_handle, $sql);
+
+							  ?> <table border> 
+								  
+								  	<tr><td>   <?php echo "<strong>&nbsp","Nom","</strong>&nbsp; ";?> </td> 
+									 <td>  <?php echo "<strong>&nbsp","Produit n°","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Vendeur n°","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Description","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Photo","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Vidéo","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Prix","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Catégorie","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Quantité","</strong>&nbsp; ";?></td></tr> <?php
+								 
+								
+
+							   while ($row=mysqli_fetch_assoc($result)) 
+								{
+									?>
+									 <tr> <td> <?php
+									echo $row['nom'];?> </td><td> &nbsp; <?php 
+									echo $row['ID_Produit'];?>&nbsp; </td> <td> &nbsp;  <?php
+									echo $row['ID_Vendeur']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['description']; ?>&nbsp; </td> <td> &nbsp; <?php
+
+									echo $row['photo']; ?>&nbsp; </td> <td> &nbsp; <?php
+									
+									echo $row['video']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['prix'],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['categorie']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['quantite']; ?>&nbsp; </td> </tr> &nbsp; 
+									
+									<?php
+									echo "</br>";
+									echo "</br>";
+
+								}
+
+
+
+
+							   ?> 
+							   </table border>
+		   					
+
 		   				</div>
 		   			</div>
 		   		</div>
@@ -287,4 +270,3 @@
 
 	</body>
 </html>
-

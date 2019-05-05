@@ -9,7 +9,7 @@ session_start();
 	if($db_found)
 	{
 
-		$sql="DELETE FROM produit WHERE ID_Produit = $_SESSION['id']";
+		$sql="DELETE FROM produit WHERE ID_Produit = $_SESSION['idproduit']";
 
 		if(mysqli_query($db_handle, $sql))
 		{

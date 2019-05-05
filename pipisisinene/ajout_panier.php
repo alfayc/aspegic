@@ -9,7 +9,7 @@ session_start();
 	if($db_found)
 	{
 
-		$sql="INSERT INTO panier VALUES ";
+		$sql="INSERT INTO panier VALUES $_SESSION['idproduit']";
 
 		if(mysqli_query($db_handle, $sql))
 		{

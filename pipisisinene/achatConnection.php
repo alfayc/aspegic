@@ -79,10 +79,12 @@
 
 					<div class="wrap">
 						<div class="search">
-							 <input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
-							 <button type="submit" class="searchButton" style="border-radius: 7px">
-								 <i class="fa fa-search"></i>
-							</button>
+							 <form method="post" action="recherche.php">
+							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 	<button type="submit" class="searchButton" style="border-radius: 7px">
+								 	<i class="fa fa-search"></i>
+								</button>
+							</form>
 						</div>
 					 </div>
 
@@ -125,6 +127,7 @@
 				<div id="menu">
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
+							<ul class="submenu fondblanc">
 								<li><a href="books.php">Livres</a></li>
 								<li><a href="music.php">Musiques</a></li>
 								<li><a href="clothes.php">Vêtements</a></li>
