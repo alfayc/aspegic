@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -95,12 +99,9 @@
 					 			echo "Bonjour " . $_SESSION['nom'];
 					 		?>
 
-					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+					 			<a class="listenav" href="deconnexion.php" style="color: white">Déconnexion</a>
 
 					 		<?php
-
-					 		session_unset();
-					 		session_destroy();
 
 					 		}
 					 		
@@ -110,7 +111,7 @@
 
 					 		?>
 					 			
-					 		<a class="listenav" href="form_acheteur_existt.php" style="color: white">Mon compte</a>
+					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
 					 		
 					 		<?php
 
@@ -133,7 +134,7 @@
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -176,7 +177,7 @@
 								{
 									
 									
-                                    ?> <tr><td> <?php echo $row[ID_Produit]; ?></td>
+                                    ?> <tr><td> <?php echo $row['ID_Produit']; ?></td>
                                     
                                     
                                     
