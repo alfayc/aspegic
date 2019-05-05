@@ -132,7 +132,7 @@
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -144,14 +144,14 @@
 
 	</nav>
 
-	<div id="ubea-hero" class="js-fullheight"  data-section="home">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-color: #ffb347">
-		   		<div class="overlaypqvendre"></div>
-		   		<div class="container">
+	<div >
+		<div >
+			<ul>
+		   	<li>
+		   		
+		   		<div >
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-		   				<div class="slider-text-inner">
+		   				<div class="slider-text-inner" style="background-color: #FFD5AF">
 						   </br></br></br></br>
 		   					<h1>COORDONNÉES DE LIVRAISON</h1>
 		   					<form method="post" action="traitement_livraison.php">
@@ -196,7 +196,7 @@
 								<label for="cryptogramme">Cryptogramme :</label>
 								<input type="number" name="cryptogramme"/>
 								<br>
-								<input class="btn btn-primary btn-lg pull-left" style="margin-left:  400px" type="submit" name="envoyer" value="Envoyer"/>
+								<p><a href="bravo.php" class="btn btn-primary btn-lg">Valider le paiment</a></p>
 							</form>
 		   					
 		   					<br>
@@ -210,28 +210,7 @@
 	  	</div>
 	</div>
 
-	<footer id="ubea-footer" role="contentinfo">
-			<div class="ubea-container">
-				
-				<div class="row copyright">
-					<div class="col-md-12">
-						<p class="pull-left">
-							<small class="block">E-CommercE - ECE Paris.Lyon</small> 
-							<small class="block">Réalisé par le groupe 92</small>
-						</p>
-						<p class="pull-right">
-							<ul class="ubea-social-icons pull-right">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-						</p>
-					</div>
-				</div>
 	
-			</div>
-		</footer>
 	</div>
 	
 	<!-- jQuery -->

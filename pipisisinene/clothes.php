@@ -137,7 +137,7 @@
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="anier.php" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -286,28 +286,7 @@
 	  	</div>
 	</div>
 
-	<footer id="ubea-footer" role="contentinfo">
-			<div class="ubea-container">
-				
-				<div class="row copyright">
-					<div class="col-md-12">
-						<p class="pull-left">
-							<small class="block">E-CommercE - ECE Paris.Lyon</small> 
-							<small class="block">Réalisé par le groupe 92</small>
-						</p>
-						<p class="pull-right">
-							<ul class="ubea-social-icons pull-right">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-						</p>
-					</div>
-				</div>
 	
-			</div>
-		</footer>
 	</div>
 	
 	<!-- jQuery -->

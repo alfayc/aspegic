@@ -138,7 +138,7 @@ session_start();
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -168,8 +168,9 @@ session_start();
 							   $db_found = mysqli_select_db($db_handle, $database);
 					   
 							   $mot = isset($_POST['mot'])?$_POST['mot'] : "";
+							   $ID_Vendeur=$_SESSION['ID_Vendeur'];
 
-								$sql = "SELECT * FROM produit WHERE ID_Vendeur = $_SESSION['idvendeur']";
+								$sql = "SELECT * FROM produit WHERE ID_Vendeur = $ID_Vendeur";
 								$result = mysqli_query($db_handle, $sql);
 
 							  ?> <table border> 

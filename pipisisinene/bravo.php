@@ -1,3 +1,20 @@
+<?php
+ session_start();
+
+ $database="piscine";
+ $db_handle=mysqli_connect('localhost', 'root', '');
+ $db_found=mysqli_select_db($db_handle, $database);
+
+ 	if($db_found)
+ 	{
+ 		$sql="DELETE * FROM panier";
+ 		if(mysqli_query($db_handle, $sql))
+ 			{echo "ok";}
+ 		else
+ 			{echo "non";}
+ 	}
+
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -132,7 +149,7 @@
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -154,9 +171,25 @@
 		   				<div class="slider-text-inner">
 		   					<br>
 		   					<h2>Merci d'avoir commandé avec </h2>
-		   					<h2>E-ComercE</h2>
+		   					<h2>E-CommercE</h2>
 
-		   				
+		   				<?php
+ 
+
+ $database="piscine";
+ $db_handle=mysqli_connect('localhost', 'root', '');
+ $db_found=mysqli_select_db($db_handle, $database);
+
+ 	if($db_found)
+ 	{
+ 		$sql="DELETE FROM panier";
+ 		if(mysqli_query($db_handle, $sql))
+ 			
+ 		else
+ 			{echo "non";}
+ 	}
+
+?>
 		   					
 
 		   				</div>

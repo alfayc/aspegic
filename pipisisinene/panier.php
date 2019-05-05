@@ -145,17 +145,19 @@ session_start();
 
 
 	</nav>
-	<div id="ubea-hero" class="js-fullheight"  data-section="home">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-color: #ffb347">
-		   		<div class="overlaypqvendre"></div>
-		   		<div class="container">
+	<div >
+		<div >
+			<ul>
+		   	<li>
+		   		
+		   		<div >
+		   			<div class="col-md-10 col-md-offset-1 text-center">
+		   				<div>
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>PANIER</h2> <br> <br>
 		   					
-		   					
+		   					<br><br><br><br><br>
 							
                                <?php
 							   
@@ -167,21 +169,49 @@ session_start();
 							   $sql="SELECT * FROM panier";
 							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-							  ?> <table border> 
-								  
-								  	<tr><td>   <?php echo "<strong>&nbsp","Nom","</strong>&nbsp; ";?> </td> 
-								</tr> <?php								 
+							  ?>  <?php								 
 								
 
 							   while ($row=mysqli_fetch_assoc($req)) 
 								{
 									
 									
-                                    ?> <tr><td> <?php echo $row['ID_Produit']; ?></td>
+                                    ?>  <?php  
+                                    $ID_Produit=$row['ID_Produit'];
+                                    $sql2="SELECT * FROM produit WHERE ID_Produit = $ID_Produit";
+                                    $req2 = mysqli_query($db_handle,$sql2) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+                                    
+                                    while ($row2=mysqli_fetch_assoc($req2)) {
+                                    	
+                                    
+                                    ?> 
+                                    <div class="prod_conteneur">
+										<div class="prod_text prod_nom" style="">
+											<?php echo $row2['nom'];?>
+										</div>
+										<div class="prod_conteneur_text">
+											<div class="prod_photo">
+											<img  src="<?php echo "ima	ges/".$row2['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px; border-color: darkgrey; border: solid">
+										</div>
+										<div class="prod_text prod_desc">
+											<?php echo $row2['description']; ?>
+										</div>
+										<div class="prod_prix">
+											<?php echo $row2['prix'],"€"; ?>
+										</div>
+										<div class="prod_bouton_acheteur" style="background-color: red">
+											<br><br>
+									<form action="supp_produit.php">
+												<input type="submit" name="supprimer" value="Supprimer"></button>
+											</form>
+										</div>
+									</div>	
+
+<?php   }
+                                    ?>
                                     
                                     
-                                    
-                                    </tr>
+                                   
                                     &nbsp;  
 
 								
@@ -194,8 +224,8 @@ session_start();
 
 								}
 							?>
-                            </table border>
-							
+                           
+							<p><a href="form_livraison.php" class="btn btn-primary btn-lg">Aller au payement</a></p>
 		   					
 
 		   				</div>
@@ -206,25 +236,7 @@ session_start();
 	  	</div>
 	</div>
 
-	<footer id="ubea-footer" role="contentinfo">
-			<div class="ubea-container">
-				
-				<div class="row copyright">
-					<div class="col-md-12">
-						<p class="pull-left">
-							<small class="block">E-CommercE - ECE Paris.Lyon</small> 
-							<small class="block">Réalisé par le groupe 92</small>
-						</p>
-						<p class="pull-right">
-							<ul class="ubea-social-icons pull-right">
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-							</ul>
-						</p>
-					</div>
-				</div>
 	
-			</div>
-		</footer>
 	</div>
 	
 	<!-- jQuery -->

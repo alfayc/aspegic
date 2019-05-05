@@ -137,8 +137,17 @@
 								<li><a href="sports.php">Sports et Loisir</a></li>
 							</ul>
 						</li>
-						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
-						<li class="listenav"><a href="#" style="color: white">Panier</a></li>
+						<li class="listenav">
+							<?php if(isset($_SESSION['type']) && $_SESSION['type']=="vendeur"){
+								?> <a href="page_vendeur.php" style="color: white">Vendre</a>
+							<?php
+							}
+							else
+							{
+								?> <a href="vendre1.php" style="color: white">Vendre</a></li> <?php
+							}
+							?>
+						<li class="listenav"><a href="panier.php" style="color: white">Panier</a></li>
 						<li class="listenav"><a href="form_admin.php" style="color: white">Admin</a></li>
 					</ul>
 				</div>
@@ -159,7 +168,7 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>Fifty Shades of Grey</h2>
-		   					<p><a href="http://twitter.com/freshdesignweb" target="_blank" class="btn btn-primary btn-lg">9,99€</a></p>
+		   					<p><a href="" target="_blank" class="btn btn-primary btn-lg">9,99€</a></p>
 		   				</div>
 		   			</div>
 		   		</div>
