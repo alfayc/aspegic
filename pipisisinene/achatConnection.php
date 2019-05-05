@@ -125,11 +125,10 @@
 				<div id="menu">
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
-							<ul class="submenu fondblanc">
-								<li><a href="#">Livres</a></li>
-								<li><a href="#">Musiques</a></li>
-								<li><a href="#">Vêtements</a></li>
-								<li><a href="#">Sports et Loisir</a></li>
+								<li><a href="books.php">Livres</a></li>
+								<li><a href="music.php">Musiques</a></li>
+								<li><a href="clothes.php">Vêtements</a></li>
+								<li><a href="sports.php">Sports et Loisir</a></li>
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>

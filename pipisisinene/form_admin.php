@@ -131,10 +131,10 @@ session_start();
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
 							<ul class="submenu fondblanc">
-								<li><a href="#">Livres</a></li>
-								<li><a href="#">Musiques</a></li>
-								<li><a href="#">Vêtements</a></li>
-								<li><a href="#">Sports et Loisir</a></li>
+								<li><a href="books.php">Livres</a></li>
+								<li><a href="music.php">Musiques</a></li>
+								<li><a href="clothes.php">Vêtements</a></li>
+								<li><a href="sports.php">Sports et Loisir</a></li>
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
@@ -173,7 +173,7 @@ session_start();
 
 		   					<form method="post" action="traitement_admin.php">
 									   <label for="mail">Votre mail :</label>
-									   <input type="text" name="mail">
+									   <input type="text" name="mail"/>
 									   <br><br>
 									   <label for="password">Votre mot de passe :</label>
 									   <input type="password" name="password"/>
