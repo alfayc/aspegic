@@ -8,12 +8,14 @@ session_start();
 
 	if($db_found)
 	{
+		$id=$_SESSION['idproduit'];
+		$loc=$_SESSION['location'];
 
-		$sql="DELETE FROM produit WHERE ID_Produit = $_SESSION['idproduit']";
+		$sql="DELETE FROM produit WHERE ID_Produit = $id";
 
 		if(mysqli_query($db_handle, $sql))
 		{
-			header("Location: $_SESSION['location']");
+			header("Location: $loc");
 		}
 	}
 
