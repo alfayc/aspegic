@@ -1,15 +1,15 @@
 <?php
 
-session_start();
+	session_start();
 
 ?>
-
 <!DOCTYPE HTML>
+
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sport & Loisirs</title>
+	<title>Musique</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -149,16 +149,17 @@ session_start();
 
 
 	</nav>
-	<div id="ubea-hero" class="js-fullheight"  data-section="home">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-color: #ffb347">
-		   		<div class="overlaypqvendre"></div>
-		   		<div class="container">
-		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<h2>RECHERCHE</h2> <br> <br>
+	<div >
+		<div  >
+			<ul>
+		   	<li style="background-color: green">
+		   		
+		   		<div >
+		   			<div class="col-md-10 col-md-offset-1 text-center" style="background-color: green">
+		   				<div>
+		   					<br><br><br><br><br><br> <br> <br>
 		   					
+
 		   					
 							   <?php
 							   
@@ -166,63 +167,53 @@ session_start();
 							   $database = "piscine";
 							   $db_handle = mysqli_connect('localhost', 'root', '');
 							   $db_found = mysqli_select_db($db_handle, $database);
+							   $vendeur1="Vendeur1";
 					   
-							   $mot = isset($_POST['mot'])?$_POST['mot'] : "";
-							   $ID_Vendeur=$_SESSION['ID_Vendeur'];
+							   $sql="SELECT * FROM vendeur WHERE nom = 'Vendeur1'" ;
+							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-								$sql = "SELECT * FROM produit WHERE ID_Vendeur = $ID_Vendeur";
-								$result = mysqli_query($db_handle, $sql);
-
-							  ?> <table border> 
-								  
-								  	<tr><td>   <?php echo "<strong>&nbsp","Nom","</strong>&nbsp; ";?> </td> 
-									 <td>  <?php echo "<strong>&nbsp","Produit n°","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Vendeur n°","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Description","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Photo","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Vidéo","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Prix","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Catégorie","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Quantité","</strong>&nbsp; ";?></td></tr> <?php
+							  ?>  <?php
 								 
 								
 
-							   while ($row=mysqli_fetch_assoc($result)) 
+								while ($row=mysqli_fetch_assoc($req)) 
 								{
 									?>
-									 <tr> <td> <?php
-									echo $row['nom'];?> </td><td> &nbsp; <?php 
-									echo $row['ID_Produit'];?>&nbsp; </td> <td> &nbsp;  <?php
-									echo $row['ID_Vendeur']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['description']; ?>&nbsp; </td> <td> &nbsp; <?php
+									<div class="prod_conteneur" style="margin-bottom: 100px; height: 250px">
+										<div class="prod_text prod_nom" style="">
+											<?php echo $row['nom'];?>
+										</div>
+										<div class="prod_conteneur_text">
+											<div class="prod_photo">
+											<img  src="<?php echo "images/".$row['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px; border-color: darkgrey; border: solid">
+										</div>
+										<div class="prod_text prod_desc">
+											<p> Vous pouvez ajouter des produits à votre liste de produits <a href="form_nvx_produit.php"> ici </a></p>
+											<p> Vous pouvez supprimer des produits de votre liste de produits <a href="supp_produit.php"> ici </a></p>
+										</div>
+										<div class="prod_prix">
+											
+										</div>
 
-									echo $row['photo']; ?>&nbsp; </td> <td> &nbsp; <?php
-									
-									echo $row['video']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['prix'],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['categorie']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['quantite']; ?>&nbsp; </td> </tr> &nbsp; 
-									
-									<?php
-									echo "</br>";
-									echo "</br>";
+										<div class="prod_bouton_acheteur">
+											<br>
 
-								}
+											<?php
+										}
+										?>
 
+									</div>
 
-
-
-							   ?> 
-							   </table border>
-		   					
 
 		   				</div>
+
 		   			</div>
 		   		</div>
 		   	</li>
 		  	</ul>
 	  	</div>
 	</div>
+
 
 	<footer id="ubea-footer" role="contentinfo">
 			<div class="ubea-container">
@@ -270,3 +261,4 @@ session_start();
 
 	</body>
 </html>
+

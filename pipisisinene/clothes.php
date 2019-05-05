@@ -203,7 +203,7 @@
 										if ($_SESSION['type']=="acheteur") 
 										{
 											$_SESSION['idproduit']=$row['ID_Produit'];
-											$_SESSION['location']="clothes.php";
+											$_SESSION['location']="sports.php";
 										
 										?>
 											
@@ -231,11 +231,10 @@
 
 										elseif($_SESSION['type']=="admin")
 										{
-											$_SESSION['location']="clothes.php";
-											$_SESSION['idproduit']=$row['ID_Produit'];
+
 										?>
 										<br>
-
+											
 											<form action="supp_produit.php">
 												<input type="submit" name="supprimer" value="Supprimer"></button>
 											</form>

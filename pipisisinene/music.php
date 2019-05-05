@@ -204,7 +204,7 @@
 										if ($_SESSION['type']=="acheteur") 
 										{
 											$_SESSION['idproduit']=$row['ID_Produit'];
-											$_SESSION['location']="music.php";
+											$_SESSION['location']="sports.php";
 										
 										?>
 											
@@ -232,8 +232,6 @@
 
 										elseif($_SESSION['type']=="admin")
 										{
-											$_SESSION['idproduit']=$row['ID_Produit'];
-											$_SESSION['location']="music.php";
 
 										?>
 										<br>
