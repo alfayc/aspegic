@@ -77,10 +77,12 @@
 
 					<div class="wrap">
 						<div class="search">
-							 <input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
-							 <button type="submit" class="searchButton" style="border-radius: 7px">
-								 <i class="fa fa-search"></i>
-							</button>
+							<form method="post" action="recherche.php">
+							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 	<button type="submit" class="searchButton" style="border-radius: 7px">
+								 	<i class="fa fa-search"></i>
+								</button>
+							</form>
 						</div>
 					 </div>
 
@@ -93,12 +95,9 @@
 					 			echo "Bonjour " . $_SESSION['nom'];
 					 		?>
 
-					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+					 			<a class="listenav" href="deconnexion.php" style="color: white">Déconnexion</a>
 
 					 		<?php
-
-					 		session_unset();
-					 		session_destroy();
 
 					 		}
 					 		
@@ -108,7 +107,7 @@
 
 					 		?>
 					 			
-					 		<a class="listenav" href="form_acheteur_existt.php" style="color: white">Mon compte</a>
+					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
 					 		
 					 		<?php
 
@@ -124,7 +123,7 @@
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
 							<ul class="submenu fondblanc">
-							<li><a href="books.php">Livres</a></li>
+								<li><a href="books.php">Livres</a></li>
 								<li><a href="music.php">Musiques</a></li>
 								<li><a href="clothes.php">Vêtements</a></li>
 								<li><a href="sports.php">Sports et Loisir</a></li>

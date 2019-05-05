@@ -18,6 +18,7 @@
 					session_start();
 					$_SESSION['nom']=$nom;
 					$_SESSION['admin']=true;
+					$_SESSION['type']="admin";
 					header("Location: index.php");
  				}
 

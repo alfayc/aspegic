@@ -2222,8 +2222,11 @@ div.nvx_prod_form {
 
 div.prod_conteneur {
   height: 200px; 
-  background-color: purple; 
+  width: 930px;
+  background-color: white; 
   border-radius: 20px;
+  border: solid;
+  background-color: #FE5126;
 }
 
 div.prod_conteneur_text {
@@ -2237,6 +2240,7 @@ div.prod_photo {
   background-color: lightpink;
   height: 150px;
   width: 150px;
+
 }
 
 div.prod_text {
@@ -2260,6 +2264,7 @@ div.prod_desc {
   padding: 9px;
   text-align: left;
   width: 460px;
+  background-color: white;
 }
 
 div.prod_prix {
@@ -2284,5 +2289,12 @@ div.prod_bouton_acheteur {
   margin-left: 10px;
   width: 120px;
   background-color: green;
+  color : black;
+}
+
+select{
+height: 30px;
+border-radius: 7px;
+margin-bottom: 7px;
 
 }

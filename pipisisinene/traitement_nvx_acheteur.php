@@ -17,6 +17,7 @@
 		{
 			session_start();
 			$_SESSION['nom']=$nom;
+			$_SESSION['type']="acheteur";
 			header("Location: index.php");
 		}
 	}

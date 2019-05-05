@@ -1,4 +1,9 @@
 <!DOCTYPE HTML>
+<?php
+
+	session_start();
+
+?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -79,10 +84,12 @@
 
 					<div class="wrap">
 						<div class="search">
-							 <input type="text" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
-							 <button type="submit" class="searchButton" style="border-radius: 7px">
-								 <i class="fa fa-search"></i>
-							</button>
+							<form method="post" action="recherche.php">
+							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
+							 	<button type="submit" class="searchButton" style="border-radius: 7px">
+								 	<i class="fa fa-search"></i>
+								</button>
+							</form>
 						</div>
 					 </div>
 
@@ -95,12 +102,9 @@
 					 			echo "Bonjour " . $_SESSION['nom'];
 					 		?>
 
-					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+					 			<a class="listenav" href="deconnexion.php" style="color: white">Déconnexion</a>
 
 					 		<?php
-
-					 		session_unset();
-					 		session_destroy();
 
 					 		}
 					 		
@@ -110,7 +114,7 @@
 
 					 		?>
 					 			
-					 		<a class="listenav" href="form_acheteur_existt.php" style="color: white">Mon compte</a>
+					 		<a class="listenav" href="AchatConnection.php" style="color: white">Mon compte</a>
 					 		
 					 		<?php
 
@@ -126,7 +130,7 @@
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
 							<ul class="submenu fondblanc">
-							<li><a href="books.php">Livres</a></li>
+								<li><a href="books.php">Livres</a></li>
 								<li><a href="music.php">Musiques</a></li>
 								<li><a href="clothes.php">Vêtements</a></li>
 								<li><a href="sports.php">Sports et Loisir</a></li>
@@ -144,14 +148,15 @@
 
 
 	</nav>
-	<div id="ubea-hero" class="js-fullheight"  data-section="home">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-color: #ffb347">
-		   		<div class="overlaypqvendre"></div>
-		   		<div class="container">
-		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-		   				<div class="slider-text-inner">
+	<div >
+		<div >
+			<ul>
+		   	<li>
+		   		
+		   		<div >
+		   			<div class="col-md-10 col-md-offset-1 text-center">
+		   				<div>
+		   					<br><br><br><br><br><br><br><br>
 		   					<h2>VÊTEMENTS</h2> <br> <br>
 		   					
 
@@ -168,40 +173,7 @@
 
 							  ?>  <?php
 								 
-								/*
-
-							   while ($row=mysqli_fetch_assoc($req)) 
-								{
-									?>
-									 <tr> <td> 
-									 	<?php
-									echo $row['nom'];?> </td><td>
-										<img src="<?php echo "images/".$row['photo']; ?>" alt="image prod">
-									 </td><td> &nbsp; <?php 
-									echo $row['ID_Produit'];?>&nbsp; </td> <td> &nbsp;  <?php
-									echo $row['ID_Vendeur']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['description']; ?>&nbsp; </td>  <td> &nbsp; <?php									
-									echo $row['video']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['prix'],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['categorie']; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row['quantite']; ?>&nbsp; </td> </tr> &nbsp; 
-									
-									<?php
-									echo "</br>";
-									echo "</br>";
-
-								}
-								<div>
-											<?php echo $row['video']; ?>
-										</div>
-										
-										<div>
-											<?php echo $row['categorie']; ?>
-										</div>
-										<div>
-											<?php echo $row['quantite']; ?>
-										</div>
-								*/
+								
 
 								while ($row=mysqli_fetch_assoc($req)) 
 								{
@@ -212,7 +184,7 @@
 										</div>
 										<div class="prod_conteneur_text">
 											<div class="prod_photo">
-											<img  src="<?php echo "ima	ges/".$row['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px">
+											<img  src="<?php echo "ima	ges/".$row['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px; border-color: darkgrey; border: solid">
 										</div>
 										<div class="prod_text prod_desc">
 											<?php echo $row['description']; ?>
@@ -223,7 +195,8 @@
 										
 										<div class="prod_bouton_acheteur">
 											<br>
-											<form>
+											<?php echo "Quantité : ".$row['quantite']; ?>
+											<form action="ajout_panier.php">
 												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
 												<input type="submit" name="ajouter" value="Ajouter"></button>
 											</form>

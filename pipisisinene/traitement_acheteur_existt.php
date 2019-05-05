@@ -20,6 +20,7 @@
 				$data = mysqli_fetch_assoc($result);
 				session_start();
 				$_SESSION['nom']=$data['nom'];
+				$_SESSION['type']="acheteur";
 				header("Location: index.php");
 			}
 

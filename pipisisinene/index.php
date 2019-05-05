@@ -103,12 +103,9 @@
 					 			echo "Bonjour " . $_SESSION['nom'];
 					 		?>
 
-					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+					 			<a class="listenav" href="deconnexion.php" style="color: white">Déconnexion</a>
 
 					 		<?php
-
-					 		session_unset();
-					 		session_destroy();
 
 					 		}
 					 		

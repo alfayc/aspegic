@@ -82,12 +82,13 @@
 
 					<div class="wrap">
 						<div class="search">
-							 <form method="post" action="recherche.php">
+							<form method="post" action="recherche.php">
 							 	<input type="text" name="mot" class="searchTerm" style="width: 500px" placeholder="Que voulez-vous chercher?">
 							 	<button type="submit" class="searchButton" style="border-radius: 7px">
 								 	<i class="fa fa-search"></i>
 								</button>
 							</form>
+						</div>
 					 </div>
 
 					 <div>
@@ -99,12 +100,9 @@
 					 			echo "Bonjour " . $_SESSION['nom'];
 					 		?>
 
-					 			<a class="listenav" href="index.php" style="color: white">Déconnexion</a>
+					 			<a class="listenav" href="deconnexion.php" style="color: white">Déconnexion</a>
 
 					 		<?php
-
-					 		session_unset();
-					 		session_destroy();
 
 					 		}
 					 		
@@ -148,7 +146,6 @@
 
 
 	</nav>
-	
 		<div id="ubea-hero" class="js-fullheight"  data-section="home">
 			<div class="flexslider js-fullheight">
 				<ul class="slides">
