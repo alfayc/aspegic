@@ -232,6 +232,8 @@
 
 										elseif($_SESSION['type']=="admin")
 										{
+											$_SESSION['idproduit']=$row['ID_Produit'];
+											$_SESSION['location']="sports.php";
 
 										?>
 										<br>
