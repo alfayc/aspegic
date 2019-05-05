@@ -154,46 +154,88 @@
 		   				<div class="slider-text-inner">
 		   					<h2>VÊTEMENTS</h2> <br> <br>
 		   					
+
 		   					
 							   <?php
 							   
 
 							   $database = "piscine";
-							   $db_handle = mysqli_connect('localhost', 'root', 'root');
+							   $db_handle = mysqli_connect('localhost', 'root', '');
 							   $db_found = mysqli_select_db($db_handle, $database);
 					   
-							   $sql="SELECT * FROM produit WHERE categorie = 'musique'" ;
+							   $sql="SELECT * FROM produit WHERE categorie = 'vetement'" ;
 							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-							  ?> <table border> 
-								  
-								  	<tr><td>   <?php echo "<strong>&nbsp","Nom","</strong>&nbsp; ";?> </td> 
-									 <td>  <?php echo "<strong>&nbsp","Produit n°","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Vendeur n°","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Description","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Photo","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Vidéo","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Prix","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Catégorie","</strong>&nbsp; ";?></td>
-									 <td>  <?php echo "<strong>&nbsp","Quantité","</strong>&nbsp; ";?></td></tr> <?php
+							  ?>  <?php
 								 
-								
+								/*
 
 							   while ($row=mysqli_fetch_assoc($req)) 
 								{
 									?>
-									 <tr> <td> <?php
-									echo $row[nom];?> </td><td> &nbsp; <?php 
-									echo $row[ID_Produit];?>&nbsp; </td> <td> &nbsp;  <?php
-									echo $row[ID_Vendeur]; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row[description]; ?>&nbsp; </td> <td> &nbsp; <?php
-
-									echo $row[photo]; ?>&nbsp; </td> <td> &nbsp; <?php
+									 <tr> <td> 
+									 	<?php
+									echo $row['nom'];?> </td><td>
+										<img src="<?php echo "images/".$row['photo']; ?>" alt="image prod">
+									 </td><td> &nbsp; <?php 
+									echo $row['ID_Produit'];?>&nbsp; </td> <td> &nbsp;  <?php
+									echo $row['ID_Vendeur']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['description']; ?>&nbsp; </td>  <td> &nbsp; <?php									
+									echo $row['video']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['prix'],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['categorie']; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row['quantite']; ?>&nbsp; </td> </tr> &nbsp; 
 									
-									echo $row[video]; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row[prix],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row[categorie]; ?>&nbsp; </td> <td> &nbsp; <?php
-									echo $row[quantite]; ?>&nbsp; </td> </tr> &nbsp; 
+									<?php
+									echo "</br>";
+									echo "</br>";
+
+								}
+								<div>
+											<?php echo $row['video']; ?>
+										</div>
+										
+										<div>
+											<?php echo $row['categorie']; ?>
+										</div>
+										<div>
+											<?php echo $row['quantite']; ?>
+										</div>
+								*/
+
+								while ($row=mysqli_fetch_assoc($req)) 
+								{
+									?>
+									<div class="prod_conteneur">
+										<div class="prod_text prod_nom" style="">
+											<?php echo $row['nom'];?>
+										</div>
+										<div class="prod_conteneur_text">
+											<div class="prod_photo">
+											<img  src="<?php echo "ima	ges/".$row['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px">
+										</div>
+										<div class="prod_text prod_desc">
+											<?php echo $row['description']; ?>
+										</div>
+										<div class="prod_prix">
+											<?php echo $row['prix'],"€"; ?>
+										</div>
+										
+										<div class="prod_bouton_acheteur">
+											<br>
+											<form>
+												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
+												<input type="submit" name="ajouter" value="Ajouter"></button>
+											</form>
+											
+
+
+											
+										</div>
+										</div>
+										
+									</div>
+									
 									
 									<?php
 									echo "</br>";
@@ -205,7 +247,7 @@
 
 
 							   ?> 
-							   </table border>
+							 
 
 		   				</div>
 		   			</div>
