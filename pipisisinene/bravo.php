@@ -1,15 +1,9 @@
-<?php
-
-	session_start();
-
-?>
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Livres</title>
+	<title>Connexion Vendeur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Projet Web Dynamique ING3" />
 
@@ -149,135 +143,21 @@
 
 
 	</nav>
-	<div >
-		<div >
-			<ul>
-		   	<li>
-		   		
-		   		<div >
-		   			<div class="col-md-10 col-md-offset-1 text-center">
-		   				<div>
-		   					<br><br><br><br><br><br><br><br>
-		   					<h2>Livres</h2> <br> <br>
+
+	<div id="ubea-hero" class="js-fullheight"  data-section="home">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-color: #ffb347">
+		   		<div class="overlaypqvendre"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<br>
+		   					<h2>Merci d'avoir commandé avec </h2>
+		   					<h2>E-ComercE</h2>
+
+		   				
 		   					
-
-		   					
-							   <?php
-							   
-
-							   $database = "piscine";
-							   $db_handle = mysqli_connect('localhost', 'root', '');
-							   $db_found = mysqli_select_db($db_handle, $database);
-					   
-							   $sql="SELECT * FROM produit WHERE categorie = 'livre'" ;
-							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-							  ?>  <?php
-								 
-								
-
-								while ($row=mysqli_fetch_assoc($req)) 
-								{
-									?>
-									<div class="prod_conteneur">
-										<div class="prod_text prod_nom" style="">
-											<?php echo $row['nom'];?>
-										</div>
-										<div class="prod_conteneur_text">
-											<div class="prod_photo">
-											<img  src="<?php echo "ima	ges/".$row['photo']; ?>" alt="image prod" style="height: 150px; width: 150px; border-radius: 10px; border-color: darkgrey; border: solid">
-										</div>
-										<div class="prod_text prod_desc">
-											<?php echo $row['description']; ?>
-										</div>
-										<div class="prod_prix">
-											<?php echo $row['prix'],"€"; ?>
-										</div>
-
-										<div class="prod_bouton_acheteur">
-											<br>
-
-										<?php 
-										if(isset($_SESSION['type']))
-										{
-
-										if ($_SESSION['type']=="acheteur") 
-										{
-											$_SESSION['idproduit']=$row['ID_Produit'];
-											$_SESSION['location']="sports.php";
-										
-										?>
-											
-											<?php echo "Quantité : ".$row['quantite']; ?>
-											<form action="ajout_panier.php">
-												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
-												<input type="submit" name="ajouter" value="Ajouter"></button>
-											</form>
-										<?php
-
-										}
-
-										elseif($_SESSION['type']=="vendeur")
-										{
-
-										?>
-											<form action="AchatConnection.php">
-												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
-												<input type="submit" name="ajouter" value="Ajouter"></button>
-											</form>
-
-										<?php
-
-										}
-
-										elseif($_SESSION['type']=="admin")
-										{
-
-										?>
-										<br>
-											
-											<form action="supp_produit.php">
-												<input type="submit" name="supprimer" value="Supprimer"></button>
-											</form>
-
-
-										<!--A REMPLIR AVEC BOUTON SUPPRIMER-->
-
-										<?php
-										}
-									}
-										else
-										{
-											?>
-											<form action="AchatConnection.php">
-												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
-												<input type="submit" name="ajouter" value="Ajouter"></button>
-											</form>
-											<?php
-										}
-										?>
-
-
-
-
-											
-										</div>
-										</div>
-										
-									</div>
-									
-									
-									<?php
-									echo "</br>";
-									echo "</br>";
-
-								}
-
-
-
-
-							   ?> 
-							 
 
 		   				</div>
 		   			</div>
@@ -286,7 +166,6 @@
 		  	</ul>
 	  	</div>
 	</div>
-
 
 	<footer id="ubea-footer" role="contentinfo">
 			<div class="ubea-container">
@@ -334,4 +213,5 @@
 
 	</body>
 </html>
+
 

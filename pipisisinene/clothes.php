@@ -192,15 +192,71 @@
 										<div class="prod_prix">
 											<?php echo $row['prix'],"€"; ?>
 										</div>
-										
+
 										<div class="prod_bouton_acheteur">
 											<br>
+
+										<?php 
+										if(isset($_SESSION['type']))
+										{
+
+										if ($_SESSION['type']=="acheteur") 
+										{
+											$_SESSION['idproduit']=$row['ID_Produit'];
+											$_SESSION['location']="sports.php";
+										
+										?>
+											
 											<?php echo "Quantité : ".$row['quantite']; ?>
 											<form action="ajout_panier.php">
 												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
 												<input type="submit" name="ajouter" value="Ajouter"></button>
 											</form>
+										<?php
+
+										}
+
+										elseif($_SESSION['type']=="vendeur")
+										{
+
+										?>
+											<form action="AchatConnection.php">
+												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
+												<input type="submit" name="ajouter" value="Ajouter"></button>
+											</form>
+
+										<?php
+
+										}
+
+										elseif($_SESSION['type']=="admin")
+										{
+
+										?>
+										<br>
 											
+											<form action="supp_produit.php">
+												<input type="submit" name="supprimer" value="Supprimer"></button>
+											</form>
+
+
+										<!--A REMPLIR AVEC BOUTON SUPPRIMER-->
+
+										<?php
+										}
+									}
+										else
+										{
+											?>
+											<form action="AchatConnection.php">
+												<input type="number" name="quantite" placeholder="0" style=" width: 50px" > 
+												<input type="submit" name="ajouter" value="Ajouter"></button>
+											</form>
+											<?php
+										}
+										?>
+
+
 
 
 											
