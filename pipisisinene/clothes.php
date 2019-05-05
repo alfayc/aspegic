@@ -126,10 +126,10 @@
 					<ul>
 						<li class="categories listenav"><a href="Categories.php" style="color: white">Catégories</a>
 							<ul class="submenu fondblanc">
-								<li><a href="#">Livres</a></li>
-								<li><a href="#">Musiques</a></li>
-								<li><a href="#">Vêtements</a></li>
-								<li><a href="#">Sports et Loisir</a></li>
+							<li><a href="books.php">Livres</a></li>
+								<li><a href="music.php">Musiques</a></li>
+								<li><a href="clothes.php">Vêtements</a></li>
+								<li><a href="sports.php">Sports et Loisir</a></li>
 							</ul>
 						</li>
 						<li class="listenav"><a href="vendre1.php" style="color: white">Vendre</a></li>
@@ -162,27 +162,40 @@
 							   $db_handle = mysqli_connect('localhost', 'root', 'root');
 							   $db_found = mysqli_select_db($db_handle, $database);
 					   
-							   $sql="SELECT * FROM produit WHERE categorie = 'vetements'" ;
-							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error()); 
+							   $sql="SELECT * FROM produit WHERE categorie = 'musique'" ;
+							   $req = mysqli_query($db_handle,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+							  ?> <table border> 
+								  
+								  	<tr><td>   <?php echo "<strong>&nbsp","Nom","</strong>&nbsp; ";?> </td> 
+									 <td>  <?php echo "<strong>&nbsp","Produit n°","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Vendeur n°","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Description","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Photo","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Vidéo","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Prix","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Catégorie","</strong>&nbsp; ";?></td>
+									 <td>  <?php echo "<strong>&nbsp","Quantité","</strong>&nbsp; ";?></td></tr> <?php
+								 
+								
+
 							   while ($row=mysqli_fetch_assoc($req)) 
 								{
-									echo "<strong>",$row[nom],"</strong>";
-									echo "</br>";
-									echo "Produit n° : ",$row[ID_Produit];
-									echo " / ";
-									echo "Vendeur n° : ",$row[ID_Vendeur];
-									echo " / ";
-									echo $row[description];
-									echo " / ";
-									echo $row[photo];
-									echo " / ";
-									echo $row[video];
-									echo " / ";
-									echo $row[prix];
-									echo " / ";
-									echo $row[categorie];
-									echo " / ";
-									echo $row[quantite];
+									?>
+									 <tr> <td> <?php
+									echo $row[nom];?> </td><td> &nbsp; <?php 
+									echo $row[ID_Produit];?>&nbsp; </td> <td> &nbsp;  <?php
+									echo $row[ID_Vendeur]; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row[description]; ?>&nbsp; </td> <td> &nbsp; <?php
+
+									echo $row[photo]; ?>&nbsp; </td> <td> &nbsp; <?php
+									
+									echo $row[video]; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row[prix],"€"; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row[categorie]; ?>&nbsp; </td> <td> &nbsp; <?php
+									echo $row[quantite]; ?>&nbsp; </td> </tr> &nbsp; 
+									
+									<?php
 									echo "</br>";
 									echo "</br>";
 
@@ -192,7 +205,7 @@
 
 
 							   ?> 
-		   					
+							   </table border>
 
 		   				</div>
 		   			</div>
