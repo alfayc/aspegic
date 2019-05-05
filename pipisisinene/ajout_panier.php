@@ -8,13 +8,17 @@ session_start();
 
 	if($db_found)
 	{
+		$idproduit=$_SESSION['idproduit'];
+		$nom=$_SESSION['nom'];
+		$location=$_SESSION['location'];
 
-		$sql="INSERT INTO panier VALUES $_SESSION['idproduit']";
+		$sql="INSERT INTO panier (ID_Produit, nom_acheteur) VALUES ('$idproduit', '$nom')";
+
 
 		if(mysqli_query($db_handle, $sql))
 		{
-			header("Location: $_SESSION['location']");
-		}
+			header("Location: $location");
+		} 
 	}
 
 	else
