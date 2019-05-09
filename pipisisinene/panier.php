@@ -201,7 +201,7 @@ session_start();
 										</div>
 										<div class="prod_bouton_acheteur" style="background-color: red">
 											<br><br>
-									<form action="supp_produit.php">
+									<form action="supp_produit_panier.php">
 												<input type="submit" name="supprimer" value="Supprimer"></button>
 											</form>
 										</div>

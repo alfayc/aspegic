@@ -158,6 +158,17 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>Connexion Acheteur</h2>
+		   					<?php
+
+								   	if(isset($_SESSION['co']) && $_SESSION['co']==false)
+								   	{
+								   		?>
+								   			<p>Mauvais mot de passe ou adresse mail, réessayez</p>
+								   		<?php
+								   			$_SESSION['co']=true;
+								   	}
+
+								   		?>
 		   					<form method="post" action="traitement_acheteur_existt.php">
 		   							<table>
 		   						
